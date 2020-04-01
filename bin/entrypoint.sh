@@ -15,6 +15,8 @@ done
 
 mkdir /root/{.koji,bin}
 cp $USER_CONFIG_DIR/config /root/.koji
+mkdir /config/kojiadmin/.koji
+cp $USER_CONFIG_DIR/config /config/kojiadmin/.koji
 cat /root/.koji/config
 koji moshimoshi
 

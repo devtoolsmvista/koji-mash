@@ -8,6 +8,7 @@ RUN yum -y update && \
         inotify-tools \
         sudo \
         httpd \
+        mash \
         python-simplejson \
         openssh-server \
         openssh-clients \
