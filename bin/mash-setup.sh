@@ -2,7 +2,8 @@
 
 set -x
 koji moshimoshi
-cd mash-git
+yum install -y inotify-tools
+cd /root/mash-git
 git clone https://github.com/jpuhlman/koji-docker.git
 cd koji-docker/
 cp  install-scripts/globals.sh \
