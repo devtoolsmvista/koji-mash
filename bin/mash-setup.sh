@@ -14,6 +14,7 @@ cp install-scripts/globals.sh \
    install-scripts/mash.sh \
    install-scripts/gen-mash.sh \
    /usr/share/koji-docker/
+sed -i  's/HOSTNAME/HOST/' /usr/share/koji-docker/parameters.sh
 
 mkdir -p /etc/koji
 cp install-scripts/globals.sh \
@@ -28,6 +29,7 @@ chmod 755 /usr/sbin/hostenv.sh
 mkdir -p /etc/mash
 chmod 777 /etc/mash
 
+rm -f /etc/mash/mash.conf
 /usr/share/koji-docker/deploy-mash.sh 
 
 

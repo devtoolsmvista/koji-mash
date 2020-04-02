@@ -5,10 +5,8 @@ RUN yum -y update && \
         lsof \
         epel-release \
         git \
-        inotify-tools \
         sudo \
         httpd \
-        mash \
         python-simplejson \
         openssh-server \
         openssh-clients \
