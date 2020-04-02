@@ -1,6 +1,8 @@
 #!/bin/bash
 
 set -x
+/usr/local/bin/entrypoint.sh
+
 koji moshimoshi
 yum install -y inotify-tools mash
 cd /root/mash-git
@@ -22,6 +24,9 @@ chmod 755 /usr/share/koji-docker/*.sh
 chmod 755 /etc/koji/*.sh
 cp install-scripts/hostenv.sh /usr/sbin/
 chmod 755 /usr/sbin/hostenv.sh
+
+mkdir -p /etc/mash
+chmod 777 /etc/mash
 
 /usr/share/koji-docker/deploy-mash.sh 
 
