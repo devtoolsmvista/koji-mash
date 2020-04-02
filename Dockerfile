@@ -33,7 +33,7 @@ RUN mkdir /root/mash-git
 RUN mkdir -p /usr/share/koji-docker
 RUN mkdir -p /etc/systemd/system/
 RUN mkdir -p /etc/sudoers.d/
-RUN echo "kojiadmin  ALL=NOPASSWD: /usr/bin/hostenv.sh" | tee -a /etc/sudoers.d/visudo
+RUN echo "kojiadmin  ALL=NOPASSWD: /usr/sbin/hostenv.sh" | tee -a /etc/sudoers.d/visudo
 RUN echo "kojiadmin  ALL=NOPASSWD: /usr/bin/systemctl" | tee -a /etc/sudoers.d/visudo
 RUN echo "Defaults!/usr/bin/systemctl !requiretty" | tee -a /etc/sudoers.d/visudo
 

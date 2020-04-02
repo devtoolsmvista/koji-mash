@@ -2,7 +2,7 @@
 
 set -x
 koji moshimoshi
-yum install -y inotify-tools
+yum install -y inotify-tools mash
 cd /root/mash-git
 git clone https://github.com/jpuhlman/koji-docker.git
 cd koji-docker/
@@ -13,13 +13,15 @@ cp install-scripts/globals.sh \
    install-scripts/gen-mash.sh \
    /usr/share/koji-docker/
 
+mkdir -p /etc/koji
 cp install-scripts/globals.sh \
    install-scripts/parameters.sh \
    /etc/koji
 
 chmod 755 /usr/share/koji-docker/*.sh
-cp install-scripts/hostenv.sh /sbin/
-chmod 755 /sbin/hostenv.sh
+chmod 755 /etc/koji/*.sh
+cp install-scripts/hostenv.sh /usr/sbin/
+chmod 755 /usr/sbin/hostenv.sh
 
 /usr/share/koji-docker/deploy-mash.sh 
 
