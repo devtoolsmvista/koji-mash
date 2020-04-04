@@ -16,8 +16,8 @@ RUN /usr/bin/ssh-keygen -A
 ENV USER_CONFIG_DIR /opt/koji-clients/users/kojiadmin
 ENV SCRIPT_DIR /usr/share/koji-docker
 
-RUN systemctl enable httpd.service
-EXPOSE 80
+#RUN systemctl enable httpd.service
+#EXPOSE 80
 EXPOSE 22 
 ADD bin/ /usr/local/bin/
 
