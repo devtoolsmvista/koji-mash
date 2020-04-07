@@ -1,6 +1,9 @@
 #!/bin/bash
 
 set -x
+
+sleep 20
+
 /usr/local/bin/entrypoint.sh
 
 koji moshimoshi
@@ -30,6 +33,13 @@ mkdir -p /etc/mash
 chmod 777 /etc/mash
 
 rm -f /etc/mash/mash.conf
+
+echo "<Directory \"/var/www/html/mash\">
+    Options Indexes FollowSymLinks
+    AllowOverride None
+    Require all granted
+</Directory>" >> /etc/httpd/conf/httpd.conf
+
 /usr/share/koji-docker/deploy-mash.sh 
 
 

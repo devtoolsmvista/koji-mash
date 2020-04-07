@@ -16,8 +16,8 @@ RUN /usr/bin/ssh-keygen -A
 ENV USER_CONFIG_DIR /opt/koji-clients/users/kojiadmin
 ENV SCRIPT_DIR /usr/share/koji-docker
 
-#RUN systemctl enable httpd.service
-#EXPOSE 80
+RUN systemctl enable httpd.service
+EXPOSE 80
 EXPOSE 22 
 ADD bin/ /usr/local/bin/
 
@@ -40,5 +40,5 @@ RUN useradd kojiadmin -d /config/kojiadmin
 RUN chown -R kojiadmin.kojiadmin /config/kojiadmin
 RUN useradd httpd
 
-#ENTRYPOINT /usr/local/bin/entrypoint.sh
-CMD ["/usr/sbin/init"]
+ENTRYPOINT /usr/local/bin/start.sh
+#CMD ["/usr/sbin/init"]
