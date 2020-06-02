@@ -6,11 +6,12 @@ RUN yum -y update && \
         epel-release \
         git \
         sudo \
+        python3 \
         httpd \
         python-simplejson \
         openssh-server \
         openssh-clients \
-        koji; yum clean all
+        koji
 
 RUN /usr/bin/ssh-keygen -A
 ENV USER_CONFIG_DIR /opt/koji-clients/users/kojiadmin
