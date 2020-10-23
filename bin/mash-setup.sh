@@ -43,6 +43,7 @@ echo "<Directory \"/var/www/html/mash\">
     Require all granted
 </Directory>" >> /etc/httpd/conf/httpd.conf
 
+systemctl restart httpd
 /usr/share/koji-docker/deploy-mash.sh 
 
 
