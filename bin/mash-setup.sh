@@ -39,6 +39,7 @@ rm -f /etc/mash/mash.conf
 echo "<Directory \"/var/www/html/mash\">
     Options Indexes FollowSymLinks
     AllowOverride None
+    IndexOptions NameWidth=*
     Require all granted
 </Directory>" >> /etc/httpd/conf/httpd.conf
 
